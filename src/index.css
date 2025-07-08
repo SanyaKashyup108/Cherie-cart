@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+.pacifico {
+  font-family: 'Pacifico', cursive;
+   font-weight: 400;
+  font-style: normal;
+  color:#FFBF78;
+}
+.logo{
+  color:  #F564A9
+}
+
+.cl-avatarBox {
+  width: 2rem;
+  height: 2rem;
+}
+  
+/* input colours */
+input{
+  background-color: #ffffffff;
+  accent-color: pink;
+  border: 1px solid #ccc;
+  color:#333
+}
