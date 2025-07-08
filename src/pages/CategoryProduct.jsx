@@ -1,7 +1,7 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
-import Loading from 'src/assets/loading.gif'
+import Loading from '../assets/loading.gif'
 import { ChevronLeft } from 'lucide-react'
 import ProductListView from '../components/ProductListView'
 
