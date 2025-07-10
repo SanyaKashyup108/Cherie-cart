@@ -12,8 +12,7 @@ const SingleProduct = () => {
 
   console.log(params);
   const [SingleProduct, setSingleProduct] = useState("");
-  const {addToCart} = useCart()
-
+  const { addToCart } = useCart();
 
   const getSingleProduct = async () => {
     try {
@@ -32,8 +31,9 @@ const SingleProduct = () => {
     getSingleProduct();
   }, []);
 
-
-   const OriginalPrice = Math.round(SingleProduct.price + (SingleProduct.price * SingleProduct.discount / 100))
+  const OriginalPrice = Math.round(
+    SingleProduct.price + (SingleProduct.price * SingleProduct.discount) / 100
+  );
 
   return (
     <>
@@ -51,41 +51,44 @@ const SingleProduct = () => {
             </div>
             {/* product details */}
             <div className="flex flex-col gap-6">
-              <h1 className="md:text-3xl text-xl font-bold text-gray-800">
+              <h1 className="md:text-3xl text-xl font-bold text-pink-900">
                 {SingleProduct.title}
               </h1>
-              <div className="text-gray-700">
+              <div className="text-pink-700">
                 {SingleProduct.brand?.toUpperCase()} /
                 {SingleProduct.category?.toUpperCase()} /{SingleProduct.model}
               </div>
-              <p className="text-xl text-red-500 font-bold">
+              <p className="text-xl text-pink-600 font-bold">
                 ${SingleProduct.price}{" "}
-                <span className="line-through text-gray-700">
+                <span className="line-through text-pink-400">
                   ${OriginalPrice}
                 </span>{" "}
-                <span className="bg-red-500 text-white px-4 py-2 rounded-full">
+                <span className="bg-pink-600 text-white px-4 py-2 rounded-full text-sm">
                   {SingleProduct.discount}% discount
                 </span>
               </p>
-              <p className="text-gray-600">{SingleProduct.description}</p>
+              <p className="text-pink-800">{SingleProduct.description}</p>
             </div>
-            {/* qunatity selector */}
+            {/* quantity selector */}
             <div className="flex items-center gap-4">
-              <label htmlFor="" className="text-sm font-medium text-gray-700">
+              <label
+                htmlFor=""
+                className="text-sm font-medium text-pink-800"
+              >
                 Quantity:
               </label>
               <input
                 type="number"
                 min={1}
                 value={1}
-                className="w-20 border border-gray-300 rounded-lg px-3 py-1 focus:outline-none focus:ring-2 foucs:ring-red-500"
+                className="w-20 border border-pink-300 rounded-lg px-3 py-1 focus:outline-none focus:ring-2 focus:ring-pink-500"
               />
             </div>
 
             <div className="flex gap-4 mt-4">
               <button
                 onClick={() => addToCart(SingleProduct)}
-                className="px-6 flex gap-2 py-2 text-lg bg-red-500 text-white rounded-md"
+                className="px-6 flex gap-2 py-2 text-lg bg-pink-600 hover:bg-pink-700 text-white rounded-md transition-all"
               >
                 <IoCartOutline className="w-6 h-6" /> Add to Cart
               </button>
